@@ -1,0 +1,3 @@
+org.springframework.test.context.ContextCustomizerFactory = \
+    com.lrasata.telecomproviderapp.config.\
+    SqlTestContainersSpringContextCustomizerFactory
