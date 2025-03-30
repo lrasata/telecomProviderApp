@@ -1,0 +1,26 @@
+{
+  "telecomProviderApp": {
+    "mobilePlan": {
+      "home": {
+        "title": "Mobile Plans",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Mobile Plan",
+        "createOrEditLabel": "Create or edit a Mobile Plan",
+        "notFound": "No Mobile Plans found"
+      },
+      "created": "A new Mobile Plan is created with identifier {{ param }}",
+      "updated": "A Mobile Plan is updated with identifier {{ param }}",
+      "deleted": "A Mobile Plan is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Mobile Plan {{ id }}?"
+      },
+      "detail": {
+        "title": "Mobile Plan"
+      },
+      "id": "ID",
+      "name": "Name",
+      "internetDataInGB": "Internet Data In GB",
+      "unlimitedSmsAndCalls": "Unlimited Sms And Calls"
+    }
+  }
+}

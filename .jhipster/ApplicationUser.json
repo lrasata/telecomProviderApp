@@ -1,0 +1,43 @@
+{
+  "annotations": {
+    "changelogDate": "20250330133223"
+  },
+  "applications": "*",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "phoneNumber",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "wallet",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "name": "ApplicationUser",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "options": {
+        "id": true,
+        "onDelete": "CASCADE"
+      },
+      "otherEntityField": "login",
+      "otherEntityName": "user",
+      "relationshipName": "internalUser",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one",
+      "relationshipWithBuiltInEntity": true
+    },
+    {
+      "otherEntityName": "mobilePlan",
+      "relationshipName": "chosenMobilePlan",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

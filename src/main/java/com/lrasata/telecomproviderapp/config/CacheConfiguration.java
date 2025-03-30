@@ -41,6 +41,8 @@ public class CacheConfiguration {
             createCache(cm, com.lrasata.telecomproviderapp.repository.UserRepository.USERS_BY_LOGIN_CACHE);
             createCache(cm, com.lrasata.telecomproviderapp.repository.UserRepository.USERS_BY_EMAIL_CACHE);
             createCache(cm, com.lrasata.telecomproviderapp.domain.Authority.class.getName());
+            createCache(cm, com.lrasata.telecomproviderapp.domain.ApplicationUser.class.getName());
+            createCache(cm, com.lrasata.telecomproviderapp.domain.MobilePlan.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }
