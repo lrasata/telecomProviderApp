@@ -46,6 +46,9 @@ export const MobilePlanUpdate = () => {
     if (values.internetDataInGB !== undefined && typeof values.internetDataInGB !== 'number') {
       values.internetDataInGB = Number(values.internetDataInGB);
     }
+    if (values.price !== undefined && typeof values.price !== 'number') {
+      values.price = Number(values.price);
+    }
 
     const entity = {
       ...mobilePlanEntity,
@@ -119,6 +122,24 @@ export const MobilePlanUpdate = () => {
                 data-cy="unlimitedSmsAndCalls"
                 check
                 type="checkbox"
+              />
+              <ValidatedField
+                label={translate('telecomProviderApp.mobilePlan.price')}
+                id="mobile-plan-price"
+                name="price"
+                data-cy="price"
+                type="text"
+                validate={{
+                  required: { value: true, message: translate('entity.validation.required') },
+                  validate: v => isNumber(v) || translate('entity.validation.number'),
+                }}
+              />
+              <ValidatedField
+                label={translate('telecomProviderApp.mobilePlan.description')}
+                id="mobile-plan-description"
+                name="description"
+                data-cy="description"
+                type="text"
               />
               <Button tag={Link} id="cancel-save" data-cy="entityCreateCancelButton" to="/mobile-plan" replace color="info">
                 <FontAwesomeIcon icon="arrow-left" />

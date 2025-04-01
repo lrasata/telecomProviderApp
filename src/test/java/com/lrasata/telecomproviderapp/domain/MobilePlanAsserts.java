@@ -51,7 +51,9 @@ public class MobilePlanAsserts {
             .satisfies(a -> assertThat(a.getInternetDataInGB()).as("check internetDataInGB").isEqualTo(expected.getInternetDataInGB()))
             .satisfies(a ->
                 assertThat(a.getUnlimitedSmsAndCalls()).as("check unlimitedSmsAndCalls").isEqualTo(expected.getUnlimitedSmsAndCalls())
-            );
+            )
+            .satisfies(a -> assertThat(a.getPrice()).as("check price").isEqualTo(expected.getPrice()))
+            .satisfies(a -> assertThat(a.getDescription()).as("check description").isEqualTo(expected.getDescription()));
     }
 
     /**

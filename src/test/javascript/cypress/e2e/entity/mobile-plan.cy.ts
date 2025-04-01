@@ -15,7 +15,7 @@ describe('MobilePlan e2e test', () => {
   const mobilePlanPageUrlPattern = new RegExp('/mobile-plan(\\?.*)?$');
   const username = Cypress.env('E2E_USERNAME') ?? 'user';
   const password = Cypress.env('E2E_PASSWORD') ?? 'user';
-  const mobilePlanSample = { name: 'disrespect meaningfully', internetDataInGB: 3311, unlimitedSmsAndCalls: true };
+  const mobilePlanSample = { name: 'deafening gah uh-huh', internetDataInGB: 32069, unlimitedSmsAndCalls: true, price: 16907.52 };
 
   let mobilePlan;
 
@@ -162,15 +162,21 @@ describe('MobilePlan e2e test', () => {
     });
 
     it('should create an instance of MobilePlan', () => {
-      cy.get(`[data-cy="name"]`).type('founder worthwhile');
-      cy.get(`[data-cy="name"]`).should('have.value', 'founder worthwhile');
+      cy.get(`[data-cy="name"]`).type('gosh frankly yum');
+      cy.get(`[data-cy="name"]`).should('have.value', 'gosh frankly yum');
 
-      cy.get(`[data-cy="internetDataInGB"]`).type('2581');
-      cy.get(`[data-cy="internetDataInGB"]`).should('have.value', '2581');
+      cy.get(`[data-cy="internetDataInGB"]`).type('25222');
+      cy.get(`[data-cy="internetDataInGB"]`).should('have.value', '25222');
 
       cy.get(`[data-cy="unlimitedSmsAndCalls"]`).should('not.be.checked');
       cy.get(`[data-cy="unlimitedSmsAndCalls"]`).click();
       cy.get(`[data-cy="unlimitedSmsAndCalls"]`).should('be.checked');
+
+      cy.get(`[data-cy="price"]`).type('7853.42');
+      cy.get(`[data-cy="price"]`).should('have.value', '7853.42');
+
+      cy.get(`[data-cy="description"]`).type('strict soon');
+      cy.get(`[data-cy="description"]`).should('have.value', 'strict soon');
 
       cy.get(entityCreateSaveButtonSelector).click();
 

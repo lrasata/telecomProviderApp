@@ -21,6 +21,11 @@ public class MobilePlanDTO implements Serializable {
     @NotNull
     private Boolean unlimitedSmsAndCalls;
 
+    @NotNull
+    private Float price;
+
+    private String description;
+
     public Long getId() {
         return id;
     }
@@ -53,6 +58,22 @@ public class MobilePlanDTO implements Serializable {
         this.unlimitedSmsAndCalls = unlimitedSmsAndCalls;
     }
 
+    public Float getPrice() {
+        return price;
+    }
+
+    public void setPrice(Float price) {
+        this.price = price;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -82,6 +103,8 @@ public class MobilePlanDTO implements Serializable {
             ", name='" + getName() + "'" +
             ", internetDataInGB=" + getInternetDataInGB() +
             ", unlimitedSmsAndCalls='" + getUnlimitedSmsAndCalls() + "'" +
+            ", price=" + getPrice() +
+            ", description='" + getDescription() + "'" +
             "}";
     }
 }

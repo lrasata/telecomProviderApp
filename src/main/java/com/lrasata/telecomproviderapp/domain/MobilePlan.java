@@ -32,6 +32,13 @@ public class MobilePlan implements Serializable {
     @Column(name = "unlimited_sms_and_calls", nullable = false)
     private Boolean unlimitedSmsAndCalls;
 
+    @NotNull
+    @Column(name = "price", nullable = false)
+    private Float price;
+
+    @Column(name = "description")
+    private String description;
+
     // jhipster-needle-entity-add-field - JHipster will add fields here
 
     public Long getId() {
@@ -86,6 +93,32 @@ public class MobilePlan implements Serializable {
         this.unlimitedSmsAndCalls = unlimitedSmsAndCalls;
     }
 
+    public Float getPrice() {
+        return this.price;
+    }
+
+    public MobilePlan price(Float price) {
+        this.setPrice(price);
+        return this;
+    }
+
+    public void setPrice(Float price) {
+        this.price = price;
+    }
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    public MobilePlan description(String description) {
+        this.setDescription(description);
+        return this;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
 
     @Override
@@ -113,6 +146,8 @@ public class MobilePlan implements Serializable {
             ", name='" + getName() + "'" +
             ", internetDataInGB=" + getInternetDataInGB() +
             ", unlimitedSmsAndCalls='" + getUnlimitedSmsAndCalls() + "'" +
+            ", price=" + getPrice() +
+            ", description='" + getDescription() + "'" +
             "}";
     }
 }

@@ -125,6 +125,14 @@ export const MobilePlan = () => {
                   <Translate contentKey="telecomProviderApp.mobilePlan.unlimitedSmsAndCalls">Unlimited Sms And Calls</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('unlimitedSmsAndCalls')} />
                 </th>
+                <th className="hand" onClick={sort('price')}>
+                  <Translate contentKey="telecomProviderApp.mobilePlan.price">Price</Translate>{' '}
+                  <FontAwesomeIcon icon={getSortIconByFieldName('price')} />
+                </th>
+                <th className="hand" onClick={sort('description')}>
+                  <Translate contentKey="telecomProviderApp.mobilePlan.description">Description</Translate>{' '}
+                  <FontAwesomeIcon icon={getSortIconByFieldName('description')} />
+                </th>
                 <th />
               </tr>
             </thead>
@@ -139,6 +147,8 @@ export const MobilePlan = () => {
                   <td>{mobilePlan.name}</td>
                   <td>{mobilePlan.internetDataInGB}</td>
                   <td>{mobilePlan.unlimitedSmsAndCalls ? 'true' : 'false'}</td>
+                  <td>{mobilePlan.price}</td>
+                  <td>{mobilePlan.description}</td>
                   <td className="text-end">
                     <div className="btn-group flex-btn-group-container">
                       <Button tag={Link} to={`/mobile-plan/${mobilePlan.id}`} color="info" size="sm" data-cy="entityDetailsButton">

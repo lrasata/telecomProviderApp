@@ -49,6 +49,18 @@ export const MobilePlanDetail = () => {
             </span>
           </dt>
           <dd>{mobilePlanEntity.unlimitedSmsAndCalls ? 'true' : 'false'}</dd>
+          <dt>
+            <span id="price">
+              <Translate contentKey="telecomProviderApp.mobilePlan.price">Price</Translate>
+            </span>
+          </dt>
+          <dd>{mobilePlanEntity.price}</dd>
+          <dt>
+            <span id="description">
+              <Translate contentKey="telecomProviderApp.mobilePlan.description">Description</Translate>
+            </span>
+          </dt>
+          <dd>{mobilePlanEntity.description}</dd>
         </dl>
         <Button tag={Link} to="/mobile-plan" replace color="info" data-cy="entityDetailsBackButton">
           <FontAwesomeIcon icon="arrow-left" />{' '}

@@ -12,17 +12,18 @@ public class MobilePlanTestSamples {
     private static final AtomicInteger intCount = new AtomicInteger(random.nextInt() + (2 * Short.MAX_VALUE));
 
     public static MobilePlan getMobilePlanSample1() {
-        return new MobilePlan().id(1L).name("name1").internetDataInGB(1);
+        return new MobilePlan().id(1L).name("name1").internetDataInGB(1).description("description1");
     }
 
     public static MobilePlan getMobilePlanSample2() {
-        return new MobilePlan().id(2L).name("name2").internetDataInGB(2);
+        return new MobilePlan().id(2L).name("name2").internetDataInGB(2).description("description2");
     }
 
     public static MobilePlan getMobilePlanRandomSampleGenerator() {
         return new MobilePlan()
             .id(longCount.incrementAndGet())
             .name(UUID.randomUUID().toString())
-            .internetDataInGB(intCount.incrementAndGet());
+            .internetDataInGB(intCount.incrementAndGet())
+            .description(UUID.randomUUID().toString());
     }
 }

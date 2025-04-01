@@ -20,7 +20,9 @@
       "id": "ID",
       "name": "Name",
       "internetDataInGB": "Internet Data In GB",
-      "unlimitedSmsAndCalls": "Unlimited Sms And Calls"
+      "unlimitedSmsAndCalls": "Unlimited Sms And Calls",
+      "price": "Price",
+      "description": "Description"
     }
   }
 }
