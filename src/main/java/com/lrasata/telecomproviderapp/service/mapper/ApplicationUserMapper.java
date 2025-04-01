@@ -26,5 +26,6 @@ public interface ApplicationUserMapper extends EntityMapper<ApplicationUserDTO, 
     @Named("mobilePlanId")
     @BeanMapping(ignoreByDefault = true)
     @Mapping(target = "id", source = "id")
+    @Mapping(target = "name", source = "name")
     MobilePlanDTO toDtoMobilePlanId(MobilePlan mobilePlan);
 }

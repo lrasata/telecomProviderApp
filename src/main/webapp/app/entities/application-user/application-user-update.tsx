@@ -154,7 +154,7 @@ export const ApplicationUserUpdate = () => {
                 {mobilePlans
                   ? mobilePlans.map(otherEntity => (
                       <option value={otherEntity.id} key={otherEntity.id}>
-                        {otherEntity.id}
+                        {otherEntity.name}
                       </option>
                     ))
                   : null}

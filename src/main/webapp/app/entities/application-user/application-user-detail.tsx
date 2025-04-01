@@ -50,7 +50,7 @@ export const ApplicationUserDetail = () => {
           <dt>
             <Translate contentKey="telecomProviderApp.applicationUser.chosenMobilePlan">Chosen Mobile Plan</Translate>
           </dt>
-          <dd>{applicationUserEntity.chosenMobilePlan ? applicationUserEntity.chosenMobilePlan.id : ''}</dd>
+          <dd>{applicationUserEntity.chosenMobilePlan ? applicationUserEntity.chosenMobilePlan.name : ''}</dd>
         </dl>
         <Button tag={Link} to="/application-user" replace color="info" data-cy="entityDetailsBackButton">
           <FontAwesomeIcon icon="arrow-left" />{' '}
