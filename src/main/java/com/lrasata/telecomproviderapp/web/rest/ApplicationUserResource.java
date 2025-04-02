@@ -1,6 +1,7 @@
 package com.lrasata.telecomproviderapp.web.rest;
 
 import com.lrasata.telecomproviderapp.repository.ApplicationUserRepository;
+import com.lrasata.telecomproviderapp.security.AuthoritiesConstants;
 import com.lrasata.telecomproviderapp.service.ApplicationUserService;
 import com.lrasata.telecomproviderapp.service.dto.ApplicationUserDTO;
 import com.lrasata.telecomproviderapp.web.rest.errors.BadRequestAlertException;
@@ -18,6 +19,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import tech.jhipster.web.util.HeaderUtil;
@@ -55,6 +57,7 @@ public class ApplicationUserResource {
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
     @PostMapping("")
+    @PreAuthorize("hasAuthority(\"" + AuthoritiesConstants.ADMIN + "\")")
     public ResponseEntity<ApplicationUserDTO> createApplicationUser(@Valid @RequestBody ApplicationUserDTO applicationUserDTO)
         throws URISyntaxException {
         LOG.debug("REST request to save ApplicationUser : {}", applicationUserDTO);
@@ -81,6 +84,7 @@ public class ApplicationUserResource {
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
     @PutMapping("/{id}")
+    @PreAuthorize("hasAuthority(\"" + AuthoritiesConstants.ADMIN + "\")")
     public ResponseEntity<ApplicationUserDTO> updateApplicationUser(
         @PathVariable(value = "id", required = false) final Long id,
         @Valid @RequestBody ApplicationUserDTO applicationUserDTO
@@ -115,6 +119,7 @@ public class ApplicationUserResource {
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
     @PatchMapping(value = "/{id}", consumes = { "application/json", "application/merge-patch+json" })
+    @PreAuthorize("hasAuthority(\"" + AuthoritiesConstants.ADMIN + "\")")
     public ResponseEntity<ApplicationUserDTO> partialUpdateApplicationUser(
         @PathVariable(value = "id", required = false) final Long id,
         @NotNull @RequestBody ApplicationUserDTO applicationUserDTO
@@ -147,6 +152,7 @@ public class ApplicationUserResource {
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of applicationUsers in body.
      */
     @GetMapping("")
+    @PreAuthorize("hasAuthority(\"" + AuthoritiesConstants.ADMIN + "\")")
     public ResponseEntity<List<ApplicationUserDTO>> getAllApplicationUsers(
         @org.springdoc.core.annotations.ParameterObject Pageable pageable,
         @RequestParam(name = "eagerload", required = false, defaultValue = "true") boolean eagerload
@@ -169,6 +175,7 @@ public class ApplicationUserResource {
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the applicationUserDTO, or with status {@code 404 (Not Found)}.
      */
     @GetMapping("/{id}")
+    @PreAuthorize("hasAuthority(\"" + AuthoritiesConstants.ADMIN + "\")")
     public ResponseEntity<ApplicationUserDTO> getApplicationUser(@PathVariable("id") Long id) {
         LOG.debug("REST request to get ApplicationUser : {}", id);
         Optional<ApplicationUserDTO> applicationUserDTO = applicationUserService.findOne(id);
@@ -182,6 +189,7 @@ public class ApplicationUserResource {
      * @return the {@link ResponseEntity} with status {@code 204 (NO_CONTENT)}.
      */
     @DeleteMapping("/{id}")
+    @PreAuthorize("hasAuthority(\"" + AuthoritiesConstants.ADMIN + "\")")
     public ResponseEntity<Void> deleteApplicationUser(@PathVariable("id") Long id) {
         LOG.debug("REST request to delete ApplicationUser : {}", id);
         applicationUserService.delete(id);
