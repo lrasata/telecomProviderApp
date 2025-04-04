@@ -1,6 +1,22 @@
-# telecomProviderApp (under construction)
+# telecomProviderApp
 
-This application was generated using JHipster 8.9.0, you can find documentation and help at [https://www.jhipster.tech/documentation-archive/v8.9.0](https://www.jhipster.tech/documentation-archive/v8.9.0).
+> This project is still under construction.
+
+This is a full-stack application generated using JHipster 8.9.0, you can find documentation about JHipster at [https://www.jhipster.tech/documentation-archive/v8.9.0](https://www.jhipster.tech/documentation-archive/v8.9.0).
+
+This project allows authenticated users to see their chosen mobile plan and optionally to select another one.
+
+## Current status
+
+![homepage1](./docs/homepage1.png)
+!![homepage2](./docs/homepage2.png)
+
+**TODO list of features and improvements**
+
+- [ ] Feature : allow authenticated user to top-up their wallet
+- [ ] Feature : allow authenticated user to change or request a change of mobile plan - Payment is then deducted from wallet
+- [ ] Feature : save date of subscription to a mobile plan and make the gauges works correctly - User is notified when Mobile plan is expired
+- [ ] UI improvements
 
 ## Project Structure
 
