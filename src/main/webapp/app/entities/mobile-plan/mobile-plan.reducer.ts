@@ -20,8 +20,8 @@ const apiUrl = 'api/mobile-plans';
 
 export const getEntities = createAsyncThunk(
   'mobilePlan/fetch_entity_list',
-  async ({ page, size, sort }: IQueryParams) => {
-    const requestUrl = `${apiUrl}?${sort ? `page=${page}&size=${size}&sort=${sort}&` : ''}cacheBuster=${new Date().getTime()}`;
+  async ({ page, size, sort, unpaged }: IQueryParams) => {
+    const requestUrl = `${apiUrl}?${sort ? `page=${page}&size=${size}&sort=${sort}&` : `unpaged=${unpaged}`}cacheBuster=${new Date().getTime()}`;
     return axios.get<IMobilePlan[]>(requestUrl);
   },
   { serializeError: serializeAxiosError },

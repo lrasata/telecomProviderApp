@@ -22,7 +22,10 @@
       "internetDataInGB": "Internet Data In GB",
       "unlimitedSmsAndCalls": "Unlimited Sms And Calls",
       "price": "Price",
-      "description": "Description"
+      "description": "Description",
+      "priceDescription": "tout les 4 semaines",
+      "buttonChoosePlan": "Choisir ce forfait",
+      "buttonReadMoreAboutPlan": "Voir le détails"
     }
   }
 }

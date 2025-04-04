@@ -1,6 +1,7 @@
 package com.lrasata.telecomproviderapp.web.rest;
 
 import com.lrasata.telecomproviderapp.repository.MobilePlanRepository;
+import com.lrasata.telecomproviderapp.security.AuthoritiesConstants;
 import com.lrasata.telecomproviderapp.service.MobilePlanService;
 import com.lrasata.telecomproviderapp.service.dto.MobilePlanDTO;
 import com.lrasata.telecomproviderapp.web.rest.errors.BadRequestAlertException;
@@ -18,6 +19,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import tech.jhipster.web.util.HeaderUtil;
@@ -55,6 +57,7 @@ public class MobilePlanResource {
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
     @PostMapping("")
+    @PreAuthorize("hasAuthority(\"" + AuthoritiesConstants.ADMIN + "\")")
     public ResponseEntity<MobilePlanDTO> createMobilePlan(@Valid @RequestBody MobilePlanDTO mobilePlanDTO) throws URISyntaxException {
         LOG.debug("REST request to save MobilePlan : {}", mobilePlanDTO);
         if (mobilePlanDTO.getId() != null) {
@@ -77,6 +80,7 @@ public class MobilePlanResource {
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
     @PutMapping("/{id}")
+    @PreAuthorize("hasAuthority(\"" + AuthoritiesConstants.ADMIN + "\")")
     public ResponseEntity<MobilePlanDTO> updateMobilePlan(
         @PathVariable(value = "id", required = false) final Long id,
         @Valid @RequestBody MobilePlanDTO mobilePlanDTO
@@ -111,6 +115,7 @@ public class MobilePlanResource {
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
     @PatchMapping(value = "/{id}", consumes = { "application/json", "application/merge-patch+json" })
+    @PreAuthorize("hasAuthority(\"" + AuthoritiesConstants.ADMIN + "\")")
     public ResponseEntity<MobilePlanDTO> partialUpdateMobilePlan(
         @PathVariable(value = "id", required = false) final Long id,
         @NotNull @RequestBody MobilePlanDTO mobilePlanDTO
@@ -169,6 +174,7 @@ public class MobilePlanResource {
      * @return the {@link ResponseEntity} with status {@code 204 (NO_CONTENT)}.
      */
     @DeleteMapping("/{id}")
+    @PreAuthorize("hasAuthority(\"" + AuthoritiesConstants.ADMIN + "\")")
     public ResponseEntity<Void> deleteMobilePlan(@PathVariable("id") Long id) {
         LOG.debug("REST request to delete MobilePlan : {}", id);
         mobilePlanService.delete(id);

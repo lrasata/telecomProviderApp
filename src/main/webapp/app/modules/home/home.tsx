@@ -1,15 +1,33 @@
 import './home.scss';
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Translate } from 'react-jhipster';
 
-import { useAppSelector } from 'app/config/store';
+import { useAppDispatch, useAppSelector } from 'app/config/store';
 import { Typography } from '@mui/material';
 import Alert from '@mui/material/Alert';
 import { Link } from 'react-router-dom';
+import { getEntities } from 'app/entities/mobile-plan/mobile-plan.reducer';
+import MobilePlanCardList from 'app/shared/components/mobile-plan-card-list';
+import { IMobilePlan } from 'app/shared/model/mobile-plan.model';
 
 export const Home = () => {
   const account = useAppSelector(state => state.authentication.account);
+
+  const dispatch = useAppDispatch();
+  const mobilePlanList: IMobilePlan[] = useAppSelector(state => state.mobilePlan.entities);
+
+  const getAllMobilePlans = () => {
+    dispatch(
+      getEntities({
+        unpaged: true,
+      }),
+    );
+  };
+
+  useEffect(() => {
+    getAllMobilePlans();
+  }, []);
 
   return (
     <>
@@ -17,15 +35,16 @@ export const Home = () => {
         <Translate contentKey="home.title" component={'span'} />
       </Typography>
       {account?.login ? (
-        <div>
+        <>
           <Alert severity="success">
             <Translate contentKey="home.logged.message" interpolate={{ username: account.login }}>
               You are logged in as user {account.login}.
             </Translate>
           </Alert>
-        </div>
+          <MobilePlanCardList cards={mobilePlanList} />
+        </>
       ) : (
-        <div>
+        <>
           <Alert severity="warning">
             <Translate contentKey="global.messages.info.authenticated.prefix">If you want to </Translate>
 
@@ -38,7 +57,7 @@ export const Home = () => {
               <br />- User (login=&quot;user&quot; and password=&quot;user&quot;).
             </Translate>
           </Alert>
-        </div>
+        </>
       )}
     </>
   );

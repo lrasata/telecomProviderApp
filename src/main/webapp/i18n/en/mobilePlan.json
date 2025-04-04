@@ -19,10 +19,13 @@
       },
       "id": "ID",
       "name": "Name",
-      "internetDataInGB": "Internet Data In GB",
+      "internetDataInGB": "Available data: ",
       "unlimitedSmsAndCalls": "Unlimited Sms And Calls",
       "price": "Price",
-      "description": "Description"
+      "description": "Description",
+      "priceDescription": "*every 4 weeks",
+      "buttonChoosePlan": "Choose this plan",
+      "buttonReadMoreAboutPlan": "Read more details"
     }
   }
 }
