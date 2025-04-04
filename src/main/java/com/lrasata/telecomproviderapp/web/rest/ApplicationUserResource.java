@@ -175,7 +175,6 @@ public class ApplicationUserResource {
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the applicationUserDTO, or with status {@code 404 (Not Found)}.
      */
     @GetMapping("/{id}")
-    @PreAuthorize("hasAuthority(\"" + AuthoritiesConstants.ADMIN + "\")")
     public ResponseEntity<ApplicationUserDTO> getApplicationUser(@PathVariable("id") Long id) {
         LOG.debug("REST request to get ApplicationUser : {}", id);
         Optional<ApplicationUserDTO> applicationUserDTO = applicationUserService.findOne(id);

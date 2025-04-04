@@ -2,27 +2,27 @@
   "telecomProviderApp": {
     "mobilePlan": {
       "home": {
-        "title": "MobilePlans",
+        "title": "Forfait mobiles",
         "refreshListLabel": "Actualiser la liste",
         "createLabel": "Créer un nouveau Mobile Plan",
         "createOrEditLabel": "Créer ou éditer un Mobile Plan",
-        "notFound": "Aucun Mobile Plan trouvé"
+        "notFound": "Aucun forfait mobile trouvé"
       },
-      "created": "Un nouveau Mobile Plan a été créé avec l'identifiant {{ param }}",
-      "updated": "Le Mobile Plan avec l'identifiant {{ param }} a été mis à jour",
-      "deleted": "Le Mobile Plan avec l'identifiant {{ param }} a été supprimé",
+      "created": "Un nouveau forfait mobile a été créé avec l'identifiant {{ param }}",
+      "updated": "Le forfait mobile avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le forfait mobile avec l'identifiant {{ param }} a été supprimé",
       "delete": {
-        "question": "Êtes-vous certain de vouloir supprimer le Mobile Plan {{ id }} ?"
+        "question": "Êtes-vous certain de vouloir supprimer le forfait mobile {{ id }} ?"
       },
       "detail": {
-        "title": "Mobile Plan"
+        "title": "Forfait mobile"
       },
       "id": "ID",
       "name": "Name",
       "internetDataInGB": "Internet Data In GB",
-      "unlimitedSmsAndCalls": "Unlimited Sms And Calls",
-      "price": "Price",
-      "description": "Description",
+      "unlimitedSmsAndCalls": "SMS et appels",
+      "price": "Prix",
+      "description": "Déscription",
       "priceDescription": "tout les 4 semaines",
       "buttonChoosePlan": "Choisir ce forfait",
       "buttonReadMoreAboutPlan": "Voir le détails"

@@ -3,7 +3,6 @@ import './app.scss';
 import 'app/config/dayjs';
 
 import React, { useEffect } from 'react';
-import { Card } from 'reactstrap';
 import { BrowserRouter } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 
@@ -50,11 +49,9 @@ export const App = () => {
           />
         </ErrorBoundary>
         <div className="container-fluid view-container" id="app-view-container">
-          <Card className="jh-card">
-            <ErrorBoundary>
-              <AppRoutes />
-            </ErrorBoundary>
-          </Card>
+          <ErrorBoundary>
+            <AppRoutes />
+          </ErrorBoundary>
           <Footer />
         </div>
       </div>

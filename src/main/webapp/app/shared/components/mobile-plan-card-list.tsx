@@ -1,7 +1,6 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
@@ -19,6 +18,9 @@ const MobilePlanCardList = ({ cards }: Props) => {
 
   return (
     <Box sx={{ width: '100%' }}>
+      <Typography variant="h5" sx={{ my: 4 }}>
+        <Translate contentKey="telecomProviderApp.mobilePlan.home.title">All mobile plans</Translate>
+      </Typography>
       <Grid container rowSpacing={2} columnSpacing={3}>
         {cards.map((card, index) => (
           <Grid size={{ xs: 12, sm: 6, md: 6 }} key={`${card.id}-${index}`}>

@@ -8,14 +8,23 @@ import { Typography } from '@mui/material';
 import Alert from '@mui/material/Alert';
 import { Link } from 'react-router-dom';
 import { getEntities } from 'app/entities/mobile-plan/mobile-plan.reducer';
+import { getEntity } from 'app/entities/application-user/application-user.reducer';
 import MobilePlanCardList from 'app/shared/components/mobile-plan-card-list';
 import { IMobilePlan } from 'app/shared/model/mobile-plan.model';
+import { IApplicationUser } from 'app/shared/model/application-user.model';
+import CurrentUserMobilePlan from 'app/shared/components/current-user-mobile-plan';
+import CurrentUserDetails from 'app/shared/components/current-user-details';
 
 export const Home = () => {
   const account = useAppSelector(state => state.authentication.account);
 
   const dispatch = useAppDispatch();
   const mobilePlanList: IMobilePlan[] = useAppSelector(state => state.mobilePlan.entities);
+  const applicationUserEntity: IApplicationUser = useAppSelector(state => state.applicationUser.entity);
+  let currentMobilePlan: IMobilePlan;
+  if (mobilePlanList && applicationUserEntity && applicationUserEntity.chosenMobilePlan) {
+    currentMobilePlan = mobilePlanList.filter(mobilePlan => mobilePlan.id === applicationUserEntity.chosenMobilePlan.id)[0];
+  }
 
   const getAllMobilePlans = () => {
     dispatch(
@@ -25,13 +34,23 @@ export const Home = () => {
     );
   };
 
+  const getApplicationUserByAccountId = (id: number) => {
+    dispatch(getEntity(id));
+  };
+
   useEffect(() => {
     getAllMobilePlans();
   }, []);
 
+  useEffect(() => {
+    if (account && account.id) {
+      getApplicationUserByAccountId(account.id);
+    }
+  }, [account]);
+
   return (
     <>
-      <Typography variant="h3" component="h1" color="primary">
+      <Typography variant="h3" component="h1" color="primary" sx={{ my: 3 }}>
         <Translate contentKey="home.title" component={'span'} />
       </Typography>
       {account?.login ? (
@@ -41,6 +60,10 @@ export const Home = () => {
               You are logged in as user {account.login}.
             </Translate>
           </Alert>
+          {applicationUserEntity && (
+            <CurrentUserDetails phoneNumber={applicationUserEntity.phoneNumber} wallet={applicationUserEntity.wallet} />
+          )}
+          {currentMobilePlan && <CurrentUserMobilePlan mobilePlan={currentMobilePlan} />}
           <MobilePlanCardList cards={mobilePlanList} />
         </>
       ) : (

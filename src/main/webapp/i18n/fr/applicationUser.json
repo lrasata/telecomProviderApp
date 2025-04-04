@@ -18,8 +18,8 @@
         "title": "Application User"
       },
       "id": "ID",
-      "phoneNumber": "Phone Number",
-      "wallet": "Wallet",
+      "phoneNumber": "Numéro de téléphone: ",
+      "wallet": "Porte monnaie: ",
       "internalUser": "Internal User",
       "chosenMobilePlan": "Chosen Mobile Plan"
     }

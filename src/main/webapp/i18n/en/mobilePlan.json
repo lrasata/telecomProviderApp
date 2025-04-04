@@ -2,7 +2,7 @@
   "telecomProviderApp": {
     "mobilePlan": {
       "home": {
-        "title": "Mobile Plans",
+        "title": "All mobile plans",
         "refreshListLabel": "Refresh list",
         "createLabel": "Create a new Mobile Plan",
         "createOrEditLabel": "Create or edit a Mobile Plan",
@@ -19,8 +19,8 @@
       },
       "id": "ID",
       "name": "Name",
-      "internetDataInGB": "Available data: ",
-      "unlimitedSmsAndCalls": "Unlimited Sms And Calls",
+      "internetDataInGB": "Available Internet data",
+      "unlimitedSmsAndCalls": "Sms And Calls",
       "price": "Price",
       "description": "Description",
       "priceDescription": "*every 4 weeks",
