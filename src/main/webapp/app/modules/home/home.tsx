@@ -14,6 +14,8 @@ import { IMobilePlan } from 'app/shared/model/mobile-plan.model';
 import { IApplicationUser } from 'app/shared/model/application-user.model';
 import CurrentUserMobilePlan from 'app/shared/components/current-user-mobile-plan';
 import CurrentUserDetails from 'app/shared/components/current-user-details';
+import LoginWithoutModal from 'app/modules/login/login-without-modal';
+import Box from '@mui/material/Box';
 
 export const Home = () => {
   const account = useAppSelector(state => state.authentication.account);
@@ -40,9 +42,6 @@ export const Home = () => {
 
   useEffect(() => {
     getAllMobilePlans();
-  }, []);
-
-  useEffect(() => {
     if (account && account.id) {
       getApplicationUserByAccountId(account.id);
     }
@@ -50,11 +49,11 @@ export const Home = () => {
 
   return (
     <>
-      <Typography variant="h3" component="h1" color="primary" sx={{ my: 3 }}>
-        <Translate contentKey="home.title" component={'span'} />
-      </Typography>
       {account?.login ? (
         <>
+          <Typography variant="h3" component="h1" color="primary" sx={{ my: 3 }}>
+            <Translate contentKey="home.title" component={'span'} />
+          </Typography>
           <Alert severity="success">
             <Translate contentKey="home.logged.message" interpolate={{ username: account.login }}>
               You are logged in as user {account.login}.
@@ -67,10 +66,10 @@ export const Home = () => {
           <MobilePlanCardList cards={mobilePlanList} />
         </>
       ) : (
-        <>
-          <Alert severity="warning">
+        <Box display="flex" flexDirection="column" alignItems="center" sx={{ my: 4 }}>
+          <LoginWithoutModal />
+          <Alert severity="warning" sx={{ my: 1 }}>
             <Translate contentKey="global.messages.info.authenticated.prefix">If you want to </Translate>
-
             <Link to="/login" className="alert-link">
               <Translate contentKey="global.messages.info.authenticated.link"> sign in</Translate>
             </Link>
@@ -80,7 +79,7 @@ export const Home = () => {
               <br />- User (login=&quot;user&quot; and password=&quot;user&quot;).
             </Translate>
           </Alert>
-        </>
+        </Box>
       )}
     </>
   );

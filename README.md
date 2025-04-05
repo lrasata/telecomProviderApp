@@ -17,6 +17,7 @@ This project allows authenticated users to see their chosen mobile plan and opti
 - [ ] Feature : allow authenticated user to change or request a change of mobile plan - Payment is then deducted from wallet
 - [ ] Feature : save date of subscription to a mobile plan and make the gauges works correctly - User is notified when Mobile plan is expired
 - [ ] UI improvements
+- [ ] Remove usages any other styling library which is not part of Mui
 
 ## Project Structure
 
