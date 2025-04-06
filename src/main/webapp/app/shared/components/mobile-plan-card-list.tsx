@@ -43,9 +43,6 @@ const MobilePlanCardList = ({ cards }: Props) => {
                   <Button size="medium" variant="contained" fullWidth={isMobile} sx={{ mt: 2, mb: 1 }}>
                     <Translate contentKey="telecomProviderApp.mobilePlan.buttonChoosePlan">Choose this plan</Translate>
                   </Button>
-                  <Button size="medium" variant="text" fullWidth={isMobile}>
-                    <Translate contentKey="telecomProviderApp.mobilePlan.buttonReadMoreAboutPlan">Read more details</Translate>
-                  </Button>
                 </Box>
               </CardContent>
             </Card>

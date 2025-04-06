@@ -84,7 +84,6 @@ public class ApplicationUserResource {
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
     @PutMapping("/{id}")
-    @PreAuthorize("hasAuthority(\"" + AuthoritiesConstants.ADMIN + "\")")
     public ResponseEntity<ApplicationUserDTO> updateApplicationUser(
         @PathVariable(value = "id", required = false) final Long id,
         @Valid @RequestBody ApplicationUserDTO applicationUserDTO

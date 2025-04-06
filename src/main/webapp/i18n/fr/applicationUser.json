@@ -21,7 +21,11 @@
       "phoneNumber": "Numéro de téléphone: ",
       "wallet": "Porte monnaie: ",
       "internalUser": "Internal User",
-      "chosenMobilePlan": "Chosen Mobile Plan"
+      "chosenMobilePlan": "Forfait mobile choisie",
+      "topUpButtonMessage": "Ajouter de l'argent",
+      "topUpModalTitle": "Ajouter de l'argent a votre porte-monnaie",
+      "topUpModalDescription": "Choisir une somme a ajouter",
+      "topUpModalConfirmButton": "Confirmer"
     }
   }
 }

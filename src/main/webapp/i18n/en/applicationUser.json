@@ -21,7 +21,11 @@
       "phoneNumber": "Phone Number: ",
       "wallet": "Wallet: ",
       "internalUser": "Internal User",
-      "chosenMobilePlan": "Chosen Mobile Plan"
+      "chosenMobilePlan": "Chosen Mobile Plan",
+      "topUpButtonMessage": "Top up",
+      "topUpModalTitle": "Top up your wallet",
+      "topUpModalDescription": "Choose an amount to add money",
+      "topUpModalConfirmButton": "Confirm"
     }
   }
 }

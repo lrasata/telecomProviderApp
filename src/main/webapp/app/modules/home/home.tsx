@@ -13,9 +13,9 @@ import MobilePlanCardList from 'app/shared/components/mobile-plan-card-list';
 import { IMobilePlan } from 'app/shared/model/mobile-plan.model';
 import { IApplicationUser } from 'app/shared/model/application-user.model';
 import CurrentUserMobilePlan from 'app/shared/components/current-user-mobile-plan';
-import CurrentUserDetails from 'app/shared/components/current-user-details';
 import LoginWithoutModal from 'app/modules/login/login-without-modal';
 import Box from '@mui/material/Box';
+import CurrentUserDetailsContainer from 'app/shared/containers/current-user-details-container';
 
 export const Home = () => {
   const account = useAppSelector(state => state.authentication.account);
@@ -59,9 +59,7 @@ export const Home = () => {
               You are logged in as user {account.login}.
             </Translate>
           </Alert>
-          {applicationUserEntity && (
-            <CurrentUserDetails phoneNumber={applicationUserEntity.phoneNumber} wallet={applicationUserEntity.wallet} />
-          )}
+          {applicationUserEntity && <CurrentUserDetailsContainer applicationUser={applicationUserEntity} />}
           {currentMobilePlan && <CurrentUserMobilePlan mobilePlan={currentMobilePlan} />}
           <MobilePlanCardList cards={mobilePlanList} />
         </>
