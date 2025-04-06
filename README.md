@@ -8,8 +8,9 @@ This project allows authenticated users to see their chosen mobile plan and opti
 
 ## Current status
 
-![homepage1](./docs/homepage1.png)
-!![homepage2](./docs/homepage2.png)
+<img src="./docs/homepage-non-logged-in.png" width=350px>
+
+<img src="./docs/homepage1.png" width=400px><img src="./docs/homepage2.png" width=350px>
 
 **TODO list of features and improvements**
 
